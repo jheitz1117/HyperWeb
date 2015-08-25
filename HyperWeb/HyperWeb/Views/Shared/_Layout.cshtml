@@ -4,16 +4,38 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
+
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+
+    <script src="~/Content/Scripts/Lib/require.js" data-main="main"></script>
+    <script>
+        requirejs.config({
+            baseUrl: '@Url.Content("~/Content/Scripts/")',
+            paths: {
+                jquery: 'lib/jquery',
+                bootstrap: 'lib/bootstrap',
+                validation: 'lib/jquery.validate.unobtrusive'
+            },
+            shim: {
+                'bootstrap': {
+                    deps: ['jquery']
+                },
+                'validation': {
+                    deps: ["lib/jquery.validate"]
+                },
+                'lib/jquery.validate': {
+                    deps: ["jquery"]
+                }
+            },
+            deps: ['jquery', 'bootstrap']
+        });
+    </script>
 </head>
 <body>
     <div class="container body-content">
         @RenderBody()
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    
     @RenderSection("scripts", required: false)
 </body>
 </html>
