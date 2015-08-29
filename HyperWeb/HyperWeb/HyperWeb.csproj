@@ -131,6 +131,7 @@
     <Content Include="Content\Scripts\Lib\require.js" />
     <Content Include="Content\Scripts\main.js" />
     <Content Include="Content\Styles\bootstrap.css" />
+    <Content Include="Content\Styles\Components\font-awesome.css" />
     <Content Include="Content\Styles\site.css">
       <DependentUpon>site.scss</DependentUpon>
     </Content>
@@ -172,7 +173,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
