@@ -11,6 +11,16 @@ namespace HyperWeb.Controllers
             return View();
         }
 
+        public ActionResult About()
+        {
+            return View();
+        }
+        
+        public ActionResult Projects()
+        {
+            return new ProjectsController().Index();
+        }
+
         public FileResult HyperSoaConfigSchema()
         {
             var assembly = typeof(HyperActivityTracker).Assembly;
