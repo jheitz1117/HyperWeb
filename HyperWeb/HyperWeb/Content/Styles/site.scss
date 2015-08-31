@@ -1,6 +1,7 @@
-﻿@import 'bootstrap';
+﻿@import "Components/bootstrap-theme";
+@import 'Vendors/Bootstrap/bootstrap';
 @import 'Components/font-awesome';
-@import 'Components/_elements';
-@import 'Components/_utilities';
+@import 'Components/elements';
+@import 'Components/utilities';
 
 /*site-wide general styling*/
