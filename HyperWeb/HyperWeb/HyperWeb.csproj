@@ -125,6 +125,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\JoshHeitzPortfolio.png" />
     <Content Include="Content\Scripts\Lib\bootstrap.js" />
     <Content Include="Content\Scripts\Lib\jquery.js" />
     <Content Include="Content\Scripts\Lib\jquery.validate.js" />
@@ -171,7 +172,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Images\" />
     <Folder Include="Content\Scripts\Modules\" />
     <Folder Include="Content\Styles\Views\" />
     <Folder Include="Models\" />
