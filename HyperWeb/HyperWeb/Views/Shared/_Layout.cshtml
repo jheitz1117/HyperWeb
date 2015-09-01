@@ -32,41 +32,38 @@
     </script>
 </head>
 <body>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#site-nav" aria-expanded="False">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="~/">S</a>
-                <span class="clearfix visible-xs"><!--Nav fix because we're using bootstrap grid system to center the nav in bigger viewports--></span>
-                <div id="site-nav" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="~/">Home <span class="sr-only">(current)</span></a></li>
-                        <li><a href="@Url.Action("About", "Home")">About</a></li>
-                        <li class="dropdown">
-                            <a href="@Url.Action("Index", "Projects")" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="@Url.Action("Index", "Projects")">All Projects</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="@Url.Action("HyperSOAFramework", "Projects")">HyperSOA Framework</a></li>
-                                <li><a href="@Url.Action("HyperCryptoUtility", "Projects")">Hyper Crypto Utility</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#site-nav" aria-expanded="False">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="~/">S</a>
+                    <span class="clearfix visible-xs"><!--Nav fix because we're using bootstrap grid system to center the nav in bigger viewports--></span>
+                    <div id="site-nav" class="collapse navbar-collapse">
+                        @{
+                            var isCurrentControllerAction = new Func<string, string, bool>(
+                                (controller, action) => (this.ViewContext.RouteData.Values["controller"].ToString().ToLower() == (controller ?? "").ToLower()) &&
+                                                        (this.ViewContext.RouteData.Values["action"].ToString().ToLower() == (action ?? "").ToLower()));
+                        }
+                        <ul class="nav navbar-nav">
+                            <li class="@(isCurrentControllerAction("home", "index") ? "active" : "")"><a href="~/">Home</a></li>
+                            <li class="@(isCurrentControllerAction("home", "about") ? "active" : "")"><a href="@Url.Action("About", "Home")">About</a></li>
+                            <li class="@(isCurrentControllerAction("projects", "index") ? "active" : "")"><a href="@Url.Action("Index", "Projects")">Projects</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<div class="container body-content">
-    @RenderBody()
-</div>
+    <div id="body-contents" class="container">
+        @RenderBody()
+    </div>
 
     <footer>
         <div class="container">
@@ -87,6 +84,6 @@
         </div>
     </footer>
 
-@RenderSection("scripts", required: false)
+    @RenderSection("scripts", required: false)
 </body>
 </html>
