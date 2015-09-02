@@ -1,4 +1,13 @@
 ﻿/* site-wide utility classes */
-.text-strong {
-    font-weight: 700;
+.text-large {
+    font-size: $font-size-large;
+}
+.text-larger {
+    font-size: ceil(($font-size-base * 1.15));
+}
+.panel-title h1 small {
+    color: darken(#fff, 10%);
+}
+.text-white {
+    color: #fff;
 }
