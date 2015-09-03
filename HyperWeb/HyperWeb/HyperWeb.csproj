@@ -222,6 +222,7 @@
     <Content Include="Content\Styles\Vendors\Bootstrap\_bootstrap.scss" />
     <Content Include="Content\Styles\Components\_bootstrap-theme.scss" />
     <Content Include="Content\Styles\Themes\_superhero-variables.scss" />
+    <Content Include="Content\Styles\Themes\_superhero-custom.scss" />
     <None Include="Properties\PublishProfiles\hypersoa.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <None Include="Scripts\jquery.intellisense.js" />
