@@ -128,6 +128,7 @@
     <Content Include="Content\Images\background.png" />
     <Content Include="Content\Images\JoshHeitzPortfolio.png" />
     <Content Include="Content\Images\JoshHeitzThumbnail.png" />
+    <Content Include="Content\Images\jumbo-bg.png" />
     <Content Include="Content\Scripts\Lib\bootstrap.js" />
     <Content Include="Content\Scripts\Lib\jquery.js" />
     <Content Include="Content\Scripts\Lib\jquery.validate.js" />

@@ -2,3 +2,10 @@
 .text-larger {
     font-size: ceil(($font-size-base * 1.15));
 }
+.jumbo-bg {
+    background-image: url('/Content/Images/jumbo-bg.png');
+    background-repeat: no-repeat;
+}
+.icon-lg {
+    font-size: 5em;
+}
